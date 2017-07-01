@@ -15,11 +15,11 @@ class __TwigTemplate_8a963b96097c9116dbb724c629dba472e055880a2c480174c87c2533bdd
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_966ef78fbea200357eb603c8d87f2d1d814fb0648e0f66471bc484e7d9e99003 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_966ef78fbea200357eb603c8d87f2d1d814fb0648e0f66471bc484e7d9e99003->enter($__internal_966ef78fbea200357eb603c8d87f2d1d814fb0648e0f66471bc484e7d9e99003_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Swiftmailer/Collector/icon.svg"));
+        $__internal_d8d83597d35b57e756c192606889de2414b25713b078c45f31b9964b6eeeb0ca = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_d8d83597d35b57e756c192606889de2414b25713b078c45f31b9964b6eeeb0ca->enter($__internal_d8d83597d35b57e756c192606889de2414b25713b078c45f31b9964b6eeeb0ca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Swiftmailer/Collector/icon.svg"));
 
-        $__internal_2bdcea93e07029d60801a6cdf723eb2625e0f2553fe143a8ad917d18cdb6269f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2bdcea93e07029d60801a6cdf723eb2625e0f2553fe143a8ad917d18cdb6269f->enter($__internal_2bdcea93e07029d60801a6cdf723eb2625e0f2553fe143a8ad917d18cdb6269f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Swiftmailer/Collector/icon.svg"));
+        $__internal_eb18d7c57d9d8bcd1a4102dd0ffb72dd752aefa8afadd34ad985ebadc99a674c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_eb18d7c57d9d8bcd1a4102dd0ffb72dd752aefa8afadd34ad985ebadc99a674c->enter($__internal_eb18d7c57d9d8bcd1a4102dd0ffb72dd752aefa8afadd34ad985ebadc99a674c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Swiftmailer/Collector/icon.svg"));
 
         // line 1
         echo "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" height=\"24\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" xml:space=\"preserve\">
@@ -27,10 +27,10 @@ class __TwigTemplate_8a963b96097c9116dbb724c629dba472e055880a2c480174c87c2533bdd
 </svg>
 ";
         
-        $__internal_966ef78fbea200357eb603c8d87f2d1d814fb0648e0f66471bc484e7d9e99003->leave($__internal_966ef78fbea200357eb603c8d87f2d1d814fb0648e0f66471bc484e7d9e99003_prof);
+        $__internal_d8d83597d35b57e756c192606889de2414b25713b078c45f31b9964b6eeeb0ca->leave($__internal_d8d83597d35b57e756c192606889de2414b25713b078c45f31b9964b6eeeb0ca_prof);
 
         
-        $__internal_2bdcea93e07029d60801a6cdf723eb2625e0f2553fe143a8ad917d18cdb6269f->leave($__internal_2bdcea93e07029d60801a6cdf723eb2625e0f2553fe143a8ad917d18cdb6269f_prof);
+        $__internal_eb18d7c57d9d8bcd1a4102dd0ffb72dd752aefa8afadd34ad985ebadc99a674c->leave($__internal_eb18d7c57d9d8bcd1a4102dd0ffb72dd752aefa8afadd34ad985ebadc99a674c_prof);
 
     }
 
@@ -57,6 +57,6 @@ class __TwigTemplate_8a963b96097c9116dbb724c629dba472e055880a2c480174c87c2533bdd
         return new Twig_Source("<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" height=\"24\" viewBox=\"0 0 24 24\" enable-background=\"new 0 0 24 24\" xml:space=\"preserve\">
     <path fill=\"#AAAAAA\" d=\"M22,4.9C22,3.9,21.1,3,20.1,3H3.9C2.9,3,2,3.9,2,4.9v13.1C2,19.1,2.9,20,3.9,20h16.1c1.1,0,1.9-0.9,1.9-1.9V4.9z M8.3,14.1l-3.1,3.1c-0.2,0.2-0.5,0.3-0.7,0.3S4,17.4,3.8,17.2c-0.4-0.4-0.4-1,0-1.4l3.1-3.1c0.4-0.4,1-0.4,1.4,0S8.7,13.7,8.3,14.1z M20.4,17.2c-0.2,0.2-0.5,0.3-0.7,0.3s-0.5-0.1-0.7-0.3l-3.1-3.1c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l3.1,3.1C20.8,16.2,20.8,16.8,20.4,17.2z M20.4,7.2l-7.6,7.6c-0.2,0.2-0.5,0.3-0.7,0.3s-0.5-0.1-0.7-0.3L3.8,7.2c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6.9,6.9L19,5.8c0.4-0.4,1-0.4,1.4,0S20.8,6.8,20.4,7.2z\"/>
 </svg>
-", "@Swiftmailer/Collector/icon.svg", "/Applications/MAMP/htdocs/Projets Symfony/Video2brain/Collectmaster/vendor/symfony/swiftmailer-bundle/Resources/views/Collector/icon.svg");
+", "@Swiftmailer/Collector/icon.svg", "/Applications/MAMP/htdocs/Projets Symfony/Video2brain/Collectmasters/vendor/symfony/swiftmailer-bundle/Resources/views/Collector/icon.svg");
     }
 }

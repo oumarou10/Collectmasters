@@ -16,6 +16,8 @@ class ItemController extends Controller
      */
     public function addAction(Request $request)
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
         $form = $this->createFormBuilder()
             ->add('title', TextType::class)
             ->add('description', TextType::class)
@@ -27,7 +29,7 @@ class ItemController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
             $item = new Item();
@@ -75,6 +77,8 @@ class ItemController extends Controller
      */
     public function removeAction (Request $request, $id)
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $repository = $doctrine->getRepository('AppBundle:Item');
