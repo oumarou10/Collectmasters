@@ -216,5 +216,10 @@ class Item
     {
         return $this->imageUrl;
     }
+
+    public function isAuthor(User $user)
+    {
+        return $this->user = $user->getId();
+    }
 }
 

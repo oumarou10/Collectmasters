@@ -2,6 +2,12 @@
 
 {% block main %}
     <div class="container">
-        {{ item.title }} <br />
+       <h3> {{ item.title }}  by <strong>{{ item.collection }} </strong><br /> </h3>
+        <p>{{ item.description }} </p><br />
+
+       <div>
+          <a href="{{ path('items') }}"> <button type="button" class="btn btn-primary"> Retour liste item </button> </a>
+       </div>
+
     </div>
 {% endblock %}

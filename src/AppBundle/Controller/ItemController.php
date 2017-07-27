@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class ItemController extends Controller
 {
@@ -16,9 +17,13 @@ class ItemController extends Controller
      */
     public function addAction(Request $request)
     {
+        $item = new Item();
+
         $this->denyAccessUnlessGranted('ROLE_USER');
 
-        $form = $this->createFormBuilder()
+        $session = new Session();
+
+        $form = $this->createFormBuilder($item)
             ->add('title', TextType::class)
             ->add('description', TextType::class)
             ->add('code', TextType::class)
@@ -29,19 +34,16 @@ class ItemController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $data = $form->getData();
+        if ($form->isValid()) {
+            $item = $form->getData();
 
-            $item = new Item();
-
-            $item->setTitle($data['title']);
-            $item->setDescription($data['description']);
-            $item->setCode($data['code']);
-            $item->setCollection($data['collection']);
+            $item->setUser($this->getUser()->getId());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($item);
             $em->flush();
+
+            $session->getFlashBag()->add('info_form', 'Objet correctement ajouté');
 
             return $this->redirectToRoute('items');
         }
@@ -77,15 +79,26 @@ class ItemController extends Controller
      */
     public function removeAction (Request $request, $id)
     {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        $this->denyAccessUnlessGranted('ROLE_USER');
+
+        $session = new Session();
 
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
         $repository = $doctrine->getRepository('AppBundle:Item');
-
         $item = $repository->find($id);
-        $em->remove($item);
-        $em->flush();
+
+        if ($item->isAuthor($this->getUser())) {
+            $em->remove($item);
+            $em->flush();
+
+            $session->getFlashBag()->add('info_remove','La suppression a bien été effectuée');
+        }
+        else {
+            $session->getFlashBag()->add('info_remove_bad_user','Objet ajouté par un autre utilisateur désolé');
+        }
+
+
 
         return $this->redirectToRoute('items');
     }
